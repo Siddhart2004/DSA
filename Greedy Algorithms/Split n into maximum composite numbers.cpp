@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int countComposite(int n){
+    if(n<4) return -1;
+    int rem=n%4;
+    if(rem==0) return n/4;
+    if(rem==1){
+        if(n<9) return -1;
+        return (n-9)/4+1;
+    }
+    if(rem==2){
+        if(n<6) return -1;
+        return (n-6)/4+1;
+    }
+    if(rem==3){
+        if(n<15) return -1;
+        return (n-15)/4+2;
+    }
+
+    return -1;
+}
+int main(){
+    cout<<countComposite(90)<<endl;
+    cout<<countComposite(143)<<endl;
+    return 0;
+}
